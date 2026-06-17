@@ -4,8 +4,12 @@ import java.util.List;
 
 public class ConversionRegister {
 
-    public List<Object> Register = new ArrayList<>();
+    public static List<Object> Register = new ArrayList<>();
 
+    public static void Register() {
+        Register.add(new Object[]{"Temperature Convert", "C to F", new Object[]{"*", 1.8, "+", 32.0}});
+        Register.add(new Object[]{"Temperature Convert", "F to C", new Object[]{"-", 32, "/", 1.8}});
+    }
 }
 
 

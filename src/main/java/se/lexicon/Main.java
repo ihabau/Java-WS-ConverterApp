@@ -5,5 +5,7 @@ package se.lexicon;
 public class Main {
     static void main() {
         Greetings.Greetings();
+        ConversionRegister.Register();
+        Logic.Logic();
     }
 }
