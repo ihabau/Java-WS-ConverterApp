@@ -7,8 +7,9 @@ public class ConversionRegister {
     public static List<Object> Register = new ArrayList<>();
 
     public static void Register() {
-        Register.add(new Object[]{"Temperature Convert", "C to F", new Object[]{"*", 1.8, "+", 32.0}});
-        Register.add(new Object[]{"Temperature Convert", "F to C", new Object[]{"-", 32, "/", 1.8}});
+        Register.add(new Object[]{"Temperature Converter", "C to F", new Object[]{"*", 1.8, "+", 32.0}});
+        Register.add(new Object[]{"Temperature Converter", "F to C", new Object[]{"-", 32, "/", 1.8}});
+        Register.add(new Object[]{"Length Converter", "mm to cm", new Object[]{"*", 10}});
     }
 }
 

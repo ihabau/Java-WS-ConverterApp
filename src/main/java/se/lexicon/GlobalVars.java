@@ -1,9 +1,16 @@
 package se.lexicon;
-
+import java.util.ArrayList;
 public class GlobalVars {
 
     public static final String devider = "|==================================================|";
     public static final int programLength = devider.length();
+
+    public static ArrayList<String> rawContextMenu = new ArrayList<>();
+    public static ArrayList<String> contextMenu = new ArrayList<>();
+
+    public static String[] rawChoices;
+    public static String[] Choices;
+
 
     public static void lengthCalc(String input) {
         int inputLength = input.length();
