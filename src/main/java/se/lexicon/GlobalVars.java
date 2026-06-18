@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class GlobalVars {
 
     public static final String devider = "|==================================================|";
+
     public static final int programLength = devider.length();
 
     public static ArrayList<String> rawContextMenu = new ArrayList<>();
@@ -12,7 +13,7 @@ public class GlobalVars {
     public static String[] Choices;
 
 
-    public static void lengthCalc(String input) {
+    public static void centerCalc(String input) {
         int inputLength = input.length();
         int leftSide = (programLength - inputLength -4) /  2;
         int rightSide = 0;
