@@ -28,6 +28,15 @@ public class GlobalVars {
 
     }
 
+    public static void LeftCalc(String input) {
+        int inputLength = input.length();
+        int rightSide = (programLength -2);
+
+        String format = "|" + "%-" + rightSide + "s|\n";
+        //System.out.println(format);
+        System.out.printf( format, input);
+
+    }
 }
 
 

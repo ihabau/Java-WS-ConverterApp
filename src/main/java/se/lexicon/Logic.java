@@ -1,7 +1,5 @@
 package se.lexicon;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
 
 public class Logic {
 
@@ -10,12 +8,9 @@ public class Logic {
         //we add the list to the arraylist for the choices
 
         for( Object regi : ConversionRegister.Register ) {
-
-           Object[] row = (Object[]) regi;
-           Object[] row2 = (Object[]) row[2];
-
+            Object[] row = ObjectRet(regi);
            GlobalVars.rawContextMenu.add(row[0].toString());
-           System.out.println(row[1] + " " + row2[0] + " " + row2[1]);
+           //System.out.println(row[0]);
         }
 
         LinkedHashSet<String> set = new LinkedHashSet<>(GlobalVars.rawContextMenu);
@@ -23,12 +18,19 @@ public class Logic {
 
         int index = 1;
         for( String entry : GlobalVars.contextMenu ) {
-            System.out.println(index + ": " + entry);
+            String text = index + ": " + entry;
+            GlobalVars.LeftCalc(text);
+            //System.out.println(index + ": " + entry);
             index += 1;
         }
 
     }
 
+    public static Object[] ObjectRet(Object reg) {
+
+        Object[] row = (Object[]) reg;
+        return row;
+    }
 
 
 
