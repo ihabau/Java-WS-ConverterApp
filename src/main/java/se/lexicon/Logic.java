@@ -10,22 +10,29 @@ public class Logic {
 
         menyGen(0,"", 0);
 
-        System.out.println(GlobalVars.devider);
-        GlobalVars.centerCalc("Type 1-" + GlobalVars.contextMenu.toArray().length + " converter.");
         Scanner input = new Scanner(System.in);
-        int con = input.nextInt() - 1;
-        String converterType = GlobalVars.contextMenu.get(con);
+
+        String converterType = getData();
 
         menyGen(1, converterType,0);
-        // --- change unto a method
-        System.out.println(GlobalVars.devider);
-        GlobalVars.centerCalc("Type 1-" + GlobalVars.contextMenu.toArray().length + " converter.");
-        input = new Scanner(System.in);
-        con = input.nextInt() - 1;
-        converterType = GlobalVars.contextMenu.get(con);
-        //----
+        converterType = getData();
 
-        GlobalVars.centerCalc("Type the value you  wnat converted");
+        // added from pig pickle for bmi calc
+        if (converterType.equalsIgnoreCase("BMI")) {
+            GlobalVars.centerCalc("Enter your weight (kg):");
+            input = new Scanner(System.in);
+            double weight = input.nextDouble();
+            GlobalVars.centerCalc("Enter your height (m):");
+            input = new Scanner(System.in);
+            double height = input.nextDouble();
+            double bmi = Calc.bmi(weight, height);
+            String category = Calc.bmiCategory(bmi);
+            String result = "BMI: " + String.format("%.1f", bmi) + " (" + category + ")";
+            GlobalVars.LeftCalc(result);
+            return;
+        }
+
+        GlobalVars.centerCalc("Type the value you want converted");
         input = new Scanner(System.in);
         double value = input.nextDouble();
         menyGen(2, converterType,value);
@@ -77,6 +84,7 @@ public class Logic {
                     }
 
                     if (regi2.toString().equalsIgnoreCase("*")) {
+
                         res = Calc.multiplication(res, (Double) row2[index2]);
                     }
 
@@ -86,7 +94,8 @@ public class Logic {
 
                 }
 
-                String result = "Result: " + value + " to " + res + " " + row[1];
+                res = Math.floor(res * 100.0) / 100.0;
+                String result = "Result: " + value + row[3] + " to " + res + row[4];
                 GlobalVars.LeftCalc(result);
                 //System.out.println("Result: " + value + " to " + res + " " + row[1]);
 
@@ -112,6 +121,15 @@ public class Logic {
 
     }
 
+    public static String getData() {
+
+        System.out.println(GlobalVars.devider);
+        GlobalVars.centerCalc("Type 1-" + GlobalVars.contextMenu.toArray().length + " converter.");
+        Scanner input = new Scanner(System.in);
+        int con = input.nextInt() - 1;
+        return GlobalVars.contextMenu.get(con);
+
+    }
 
 
 }
