@@ -16,16 +16,16 @@
 ### Main Menu & Navigation
 5. [x] Display a numbered menu showing your 3 chosen converters + Exit option
 6. [x] For multi-direction converters, show a sub-menu for the user to choose
-7. [ ] Keep running until the user chooses to exit
+7. [x] Keep running until the user chooses to exit
 
 ### Pick Your 3 Converters
 8. [x] Currency Converter (SEK → USD / SEK → EUR)
 9. [x] Temperature Converter (°C → °F / °F → °C)
 10. [x] Length Converter (cm → m / m → km)
 11. [x] Weight Converter (kg → g / kg → lb)
-12. [ ] Time Converter (h → min / min → sec)
-13. [ ] Speed Converter (km/h → m/s / m/s → km/h)
-14. [ ] Data Storage Converter (KB → MB / MB → GB)
+12. [x] Time Converter (h → min / min → sec)
+13. [x] Speed Converter (km/h → m/s / m/s → km/h)
+14. [x] Data Storage Converter (KB → MB / MB → GB)
 15. [x] BMI Calculator (weight + height → BMI + category)
 16. [ ] Fuel Consumption Converter (L/100km → km/L / km/L → L/100km)
 17. [ ] Grade Converter (score 0–100 → A–F grade)
@@ -33,8 +33,8 @@
 ### User Interaction
 18. [x] Ask user to enter a value
 19. [x] Calculate and display result in a formatted line
-20. [ ] After each conversion, ask: continue or exit?
-21. [ ] Show `Goodbye!` on exit
+20. [x] After each conversion, ask: continue or exit?
+21. [x] Show `Goodbye!` on exit
 
 ### Output Format
 22. [x] Match the sample session output format exactly
@@ -42,9 +42,9 @@
 24. [x] For BMI: display `BMI: X.XX  ->  Category`
 
 ### Optional Challenges
-25. [ ] **Challenge 1:** Input validation (reject non-numeric, invalid menu choices, negative values where inappropriate)
-26. [ ] **Challenge 2:** Session history (print summary on exit)
-27. [ ] **Challenge 3:** Add timestamps to each conversion
+25. [x] **Challenge 1:** Input validation (reject non-numeric, invalid menu choices, negative values where inappropriate)
+26. [x] **Challenge 2:** Session history (print summary on exit)
+27. [x] **Challenge 3:** Add timestamps to each conversion
 
 
 

@@ -8,6 +8,7 @@ public class ConversionRegister {
     public static List<Object> Register = new ArrayList<>();
 
     public static void Register() {
+        Register.clear();
         CurrencyRates.fetchRates();
         // populated by big picle opencode ai
         // ============ TEMPERATURE ============
@@ -90,6 +91,58 @@ public class ConversionRegister {
 
         // ============ BMI ============
         Register.add(new Object[]{"BMI Calculator", "BMI", new Object[]{}, "kg/m", ""});
+
+        // ============ TIME ============
+        Register.add(new Object[]{"Time Converter", "ms to s", new Object[]{"/", 1000.0}, "ms", "s"});
+        Register.add(new Object[]{"Time Converter", "s to ms", new Object[]{"*", 1000.0}, "s", "ms"});
+        Register.add(new Object[]{"Time Converter", "s to min", new Object[]{"/", 60.0}, "s", "min"});
+        Register.add(new Object[]{"Time Converter", "min to s", new Object[]{"*", 60.0}, "min", "s"});
+        Register.add(new Object[]{"Time Converter", "min to hr", new Object[]{"/", 60.0}, "min", "hr"});
+        Register.add(new Object[]{"Time Converter", "hr to min", new Object[]{"*", 60.0}, "hr", "min"});
+        Register.add(new Object[]{"Time Converter", "hr to day", new Object[]{"/", 24.0}, "hr", "day"});
+        Register.add(new Object[]{"Time Converter", "day to hr", new Object[]{"*", 24.0}, "day", "hr"});
+        Register.add(new Object[]{"Time Converter", "day to week", new Object[]{"/", 7.0}, "day", "week"});
+        Register.add(new Object[]{"Time Converter", "week to day", new Object[]{"*", 7.0}, "week", "day"});
+        Register.add(new Object[]{"Time Converter", "day to year", new Object[]{"/", 365.0}, "day", "year"});
+        Register.add(new Object[]{"Time Converter", "year to day", new Object[]{"*", 365.0}, "year", "day"});
+        Register.add(new Object[]{"Time Converter", "week to year", new Object[]{"/", 52.0}, "week", "year"});
+        Register.add(new Object[]{"Time Converter", "year to week", new Object[]{"*", 52.0}, "year", "week"});
+        Register.add(new Object[]{"Time Converter", "s to hr", new Object[]{"/", 3600.0}, "s", "hr"});
+        Register.add(new Object[]{"Time Converter", "hr to s", new Object[]{"*", 3600.0}, "hr", "s"});
+        Register.add(new Object[]{"Time Converter", "min to day", new Object[]{"/", 1440.0}, "min", "day"});
+        Register.add(new Object[]{"Time Converter", "day to min", new Object[]{"*", 1440.0}, "day", "min"});
+        Register.add(new Object[]{"Time Converter", "s to day", new Object[]{"/", 86400.0}, "s", "day"});
+        Register.add(new Object[]{"Time Converter", "day to s", new Object[]{"*", 86400.0}, "day", "s"});
+
+        // ============ DATA STORAGE ============
+        Register.add(new Object[]{"Data Storage Converter", "bit to byte", new Object[]{"/", 8.0}, "bit", "byte"});
+        Register.add(new Object[]{"Data Storage Converter", "byte to bit", new Object[]{"*", 8.0}, "byte", "bit"});
+        Register.add(new Object[]{"Data Storage Converter", "byte to KB", new Object[]{"/", 1024.0}, "byte", "KB"});
+        Register.add(new Object[]{"Data Storage Converter", "KB to byte", new Object[]{"*", 1024.0}, "KB", "byte"});
+        Register.add(new Object[]{"Data Storage Converter", "KB to MB", new Object[]{"/", 1024.0}, "KB", "MB"});
+        Register.add(new Object[]{"Data Storage Converter", "MB to KB", new Object[]{"*", 1024.0}, "MB", "KB"});
+        Register.add(new Object[]{"Data Storage Converter", "MB to GB", new Object[]{"/", 1024.0}, "MB", "GB"});
+        Register.add(new Object[]{"Data Storage Converter", "GB to MB", new Object[]{"*", 1024.0}, "GB", "MB"});
+        Register.add(new Object[]{"Data Storage Converter", "GB to TB", new Object[]{"/", 1024.0}, "GB", "TB"});
+        Register.add(new Object[]{"Data Storage Converter", "TB to GB", new Object[]{"*", 1024.0}, "TB", "GB"});
+        Register.add(new Object[]{"Data Storage Converter", "byte to MB", new Object[]{"/", 1048576.0}, "byte", "MB"});
+        Register.add(new Object[]{"Data Storage Converter", "MB to byte", new Object[]{"*", 1048576.0}, "MB", "byte"});
+        Register.add(new Object[]{"Data Storage Converter", "KB to GB", new Object[]{"/", 1048576.0}, "KB", "GB"});
+        Register.add(new Object[]{"Data Storage Converter", "GB to KB", new Object[]{"*", 1048576.0}, "GB", "KB"});
+        Register.add(new Object[]{"Data Storage Converter", "MB to TB", new Object[]{"/", 1024.0}, "MB", "TB"});
+        Register.add(new Object[]{"Data Storage Converter", "TB to MB", new Object[]{"*", 1024.0}, "TB", "MB"});
+        Register.add(new Object[]{"Data Storage Converter", "byte to GB", new Object[]{"/", 1073741824.0}, "byte", "GB"});
+        Register.add(new Object[]{"Data Storage Converter", "GB to byte", new Object[]{"*", 1073741824.0}, "GB", "byte"});
+        Register.add(new Object[]{"Data Storage Converter", "KB to TB", new Object[]{"/", 1073741824.0}, "KB", "TB"});
+        Register.add(new Object[]{"Data Storage Converter", "TB to KB", new Object[]{"*", 1073741824.0}, "TB", "KB"});
+        // ============ SPEED ============
+        Register.add(new Object[]{"Speed Converter", "m/s to km/h", new Object[]{"*", 3.6}, "m/s", "km/h"});
+        Register.add(new Object[]{"Speed Converter", "km/h to m/s", new Object[]{"/", 3.6}, "km/h", "m/s"});
+        Register.add(new Object[]{"Speed Converter", "m/s to km/s", new Object[]{"/", 1000.0}, "m/s", "km/s"});
+        Register.add(new Object[]{"Speed Converter", "km/s to m/s", new Object[]{"*", 1000.0}, "km/s", "m/s"});
+        Register.add(new Object[]{"Speed Converter", "km/h to km/s", new Object[]{"/", 3600.0}, "km/h", "km/s"});
+        Register.add(new Object[]{"Speed Converter", "km/s to km/h", new Object[]{"*", 3600.0}, "km/s", "km/h"});
+
         // when asked big picle to add currency conversion i thought it would add static once but it add a function
         // get from api
         // ============ CURRENCY ============

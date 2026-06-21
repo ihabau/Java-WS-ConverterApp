@@ -1,8 +1,10 @@
 package se.lexicon;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.time.Clock;
 
 public class Logic {
 
@@ -13,11 +15,18 @@ public class Logic {
         Scanner input = new Scanner(System.in);
 
         String converterType = getData();
-
+        if (converterType.equalsIgnoreCase("exit")) {
+            return;
+        }
         menyGen(1, converterType,0);
         converterType = getData();
 
-        // added from pig pickle for bmi calc
+
+        if (converterType.equalsIgnoreCase("exit")) {
+            return;
+        }
+
+        // added from big pickle for bmi calc
         if (converterType.equalsIgnoreCase("BMI")) {
             GlobalVars.centerCalc("Enter your weight (kg):");
             input = new Scanner(System.in);
@@ -31,15 +40,17 @@ public class Logic {
             GlobalVars.LeftCalc(result);
             return;
         }
+        // end of ai addition.
 
         GlobalVars.centerCalc("Type the value you want converted");
         input = new Scanner(System.in);
+
         double value = input.nextDouble();
         menyGen(2, converterType,value);
 
 
 
-    }
+    }// -----------------------------------------
 
     public static Object[] ObjectRet(Object reg) {
 
@@ -66,10 +77,8 @@ public class Logic {
 
             }
             if ( row[1].toString().equalsIgnoreCase(type) && index == 2 ) { // here we print result
-                //Object[] formula = (Object[]) row[2];
-                //System.out.println(row2[0]);
 
-                int counter = row2.length / 2 + 1;
+                int counter = row2.length - 1;
 
                 for (int i = 0; i < counter; i++) {
                     Object regi2 = row2[i];
@@ -96,11 +105,14 @@ public class Logic {
 
                 res = Math.floor(res * 100.0) / 100.0;
                 String result = "Result: " + value + row[3] + " to " + res + row[4];
+                String entry = LocalDate.now() +  ": " + value + row[3] + " to " + res + row[4];
+                GlobalVars.sessionHistory.add(entry);
                 GlobalVars.LeftCalc(result);
-                //System.out.println("Result: " + value + " to " + res + " " + row[1]);
 
             }
+
         }
+        GlobalVars.rawContextMenu.add("Exit");
         LinkedHashSet<String> set = new LinkedHashSet<>(GlobalVars.rawContextMenu);
         GlobalVars.contextMenu.addAll(set);
 
@@ -123,13 +135,26 @@ public class Logic {
 
     public static String getData() {
 
-        System.out.println(GlobalVars.devider);
-        GlobalVars.centerCalc("Type 1-" + GlobalVars.contextMenu.toArray().length + " converter.");
-        Scanner input = new Scanner(System.in);
-        int con = input.nextInt() - 1;
-        return GlobalVars.contextMenu.get(con);
+        while (true) {
 
+            Scanner input = new Scanner(System.in);
+            try {
+                System.out.println(GlobalVars.devider);
+                GlobalVars.centerCalc("Type 1-" + GlobalVars.contextMenu.toArray().length + " converter.");
+
+                int con = input.nextInt() - 1;
+                if (con >= 0 && con < GlobalVars.contextMenu.size()) {
+                    return GlobalVars.contextMenu.get(con);
+                } else {
+                    System.out.println("Number out of bound.");
+                }
+            } catch ( Exception e) {
+                System.out.println("Try again.");
+                input.next();
+            }
+        }
     }
+
 
 
 }
